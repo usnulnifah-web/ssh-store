@@ -47,3 +47,9 @@ Prototype sekarang menampilkan notifikasi sukses berisi username, password, host
 ## Notifikasi akun dan informasi member
 
 Setelah pembelian/provisioning berhasil, UI menampilkan notifikasi mengambang di kanan bawah. Notifikasi dapat diklik untuk membuka detail lengkap dan memiliki tombol **X** untuk menutup. Detail akun disimpan ke daftar **Akun Saya** pada prototype dan dapat dibuka kembali atau diunduh sebagai TXT. Untuk produksi, daftar ini harus dipindahkan dari localStorage ke database yang terikat pada `user_id`, dengan otorisasi server-side sehingga member tidak dapat melihat akun milik member lain.
+
+## Dashboard admin dan SEO
+
+`admin.html` menyediakan prototype dashboard admin dengan tampilan minimal. Dashboard utama sengaja kosong, sedangkan seluruh menu dipindahkan ke drawer hamburger: SEO Website, Produk & Harga, Server & Protocol, Member, Saldo & Top Up, Pesanan, Tombol Publik, dan Pengaturan Sistem.
+
+Panel SEO menyediakan SEO title, meta description, keywords, canonical URL, Open Graph image, robots, serta preview hasil pencarian. Prototype menyimpan pengaturan di localStorage; versi produksi harus menyimpannya di backend/database lalu layout publik membaca nilai tersebut secara server-side.
