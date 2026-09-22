@@ -63,3 +63,7 @@ Panel **Server & Protocol** sekarang menyediakan konfigurasi VPS: nama server, I
 `member.html` sekarang menyediakan struktur menu member lengkap melalui hamburger: Dashboard, Produk/Beli Layanan, Akun Saya, Pesanan Saya, Saldo & Top Up, Voucher/Promo, Referral, Notifikasi, Panduan Koneksi, Bantuan/Tiket, dan Profil & Keamanan.
 
 Menu admin juga dilengkapi placeholder terstruktur untuk Provisioning, Akun Digital, Voucher & Promo, Notifikasi, Support/Tiket, Laporan, dan Audit Log. Semua panel masih berupa kerangka UI sampai backend database, autentikasi, wallet, payment gateway, dan provisioning multi-protocol dihubungkan.
+
+## Audit interaksi tombol
+
+Semua tombol navigasi yang ada pada prototype sekarang memiliki aksi: menu hamburger membuka drawer, menu berpindah panel, menu publik mobile terbuka, form SEO/VPS menyimpan data simulasi, produk mengarahkan ke katalog, top up/voucher/support/profile memberi status yang jelas, dan referral memiliki aksi salin. Fitur yang membutuhkan backend—login, payment gateway, tiket, profil, dan provisioning nyata—tidak dibuat seolah-olah aktif; tombolnya memberi keterangan bahwa integrasi backend belum dikonfigurasi.
