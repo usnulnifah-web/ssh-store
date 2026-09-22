@@ -280,3 +280,7 @@ Jika tetap gagal, buat tiket di menu **Bantuan / Tiket** dan sertakan nomor pesa
 
 - Website, admin, member, dan backend: [ssh-store](https://github.com/usnulnifah-web/ssh-store)
 - Installer dan VPS Agent: [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-vps-agent-installer)
+
+## Menu terminal Habibillah saat login VPS
+
+Installer juga memasang menu terminal berwarna khusus admin. Menu muncul hanya pada login SSH root interaktif dan menampilkan daftar protocol bernomor. Ketik `1` untuk SSH WebSocket, kemudian pilih daftar akun, buat akun, perpanjang, suspend/aktifkan, atau hapus akun. Penghapusan meminta konfirmasi `HAPUS`. Pilih `0` untuk kembali ke menu sebelumnya atau keluar ke shell. Menu tidak mengganggu API, cron, SCP, dan perintah SSH otomatis.
