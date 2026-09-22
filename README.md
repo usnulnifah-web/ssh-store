@@ -71,3 +71,7 @@ Semua tombol navigasi yang ada pada prototype sekarang memiliki aksi: menu hambu
 ## Monitoring VPS
 
 Dashboard admin memiliki grafik garis CPU/RAM, kartu total VPS/online, resource tertinggi, kartu kesehatan per server, dan alert untuk kondisi **OVERLOAD** atau **OFFLINE**. Prototype menampilkan demo data agar UI dapat diuji. Pada integrasi produksi, dashboard mengambil metrics dari Backend API/VPS Agent setiap 60 detik; ringkasan harian di-reset pukul 00.00, tetapi deteksi overload/offline tetap berjalan sepanjang hari.
+
+## Repository installer VPS
+
+Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-vps-agent-installer). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
