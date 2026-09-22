@@ -79,3 +79,7 @@ Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://githu
 ## Config Builder dan Panduan Setup
 
 Panel admin sekarang memiliki menu **Konfigurasi Protocol** dan **Panduan Setup**. Config Builder mencakup SSH WebSocket/SSL dan OpenVPN WebSocket dengan SSL port default `443`, WebSocket path, host/domain, format TXT/OVPN/link/QR, preview, salin, dan unduh TXT. Port 443 dapat diganti manual jika server/provider memakai port lain. Panduan setup menjelaskan VPS, installer agent, Server & Protocol, konfigurasi protocol, pengujian, dan troubleshooting.
+
+### Installer tanpa prompt
+
+Installer VPS Agent berjalan tanpa pertanyaan interaktif: default-nya bind `127.0.0.1`, port `8787`, dan secret HMAC dibuat otomatis. Jika backend berbeda server, pelanggan dapat memakai parameter opsional `--backend-ip` dan `--bind-host`. Secret HMAC berbeda dari password SSH VPS dan dipakai khusus untuk autentikasi API Agent.
