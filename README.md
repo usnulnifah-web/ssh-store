@@ -1,6 +1,26 @@
 # SSH Store
-
 Prototype landing page untuk toko akun SSH dengan gaya visual gelap-modern, katalog produk, login member, saldo, top up gateway/manual, dan pilihan server.
+
+## Auto-install website
+
+Repository ini menyediakan `install.sh` untuk memasang website publik, backend API, service systemd, dan Nginx pada Ubuntu/Debian. Script ini berbeda dari installer VPS Agent pada repository `ssh-store-vps-agent-installer`.
+
+```bash
+git clone https://github.com/usnulnifah-web/ssh-store.git
+cd ssh-store
+sudo DOMAIN=www.domain-anda.com bash install.sh
+```
+
+Jika VPS Agent berada pada mesin lain, isi URL dan secret HMAC yang sama:
+
+```bash
+sudo DOMAIN=www.domain-anda.com \
+  AGENT_URL=http://10.0.0.20:8787 \
+  AGENT_SHARED_SECRET='secret-HMAC-yang-sama' \
+  bash install.sh
+```
+
+Setelah instalasi, website dibuka melalui `http://www.domain-anda.com` dan panel admin melalui `http://www.domain-anda.com/admin`. DNS domain harus diarahkan ke IP server website. HTTPS/SSL dapat dipasang setelah DNS aktif dengan Certbot. Installer ini menyiapkan deployment prototype; autentikasi produksi, database, saldo atomik, dan payment gateway tetap harus diaktifkan sebelum menerima transaksi nyata.
 
 ## Status
 
