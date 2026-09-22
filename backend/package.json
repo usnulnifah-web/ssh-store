@@ -1,0 +1,1 @@
+{"name":"ssh-store-backend","private":true,"type":"module","scripts":{"agent":"node src/agent.js","api":"node src/api.js"},"engines":{"node":">=20"}}
