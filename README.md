@@ -3,7 +3,7 @@ Prototype landing page untuk toko akun SSH dengan gaya visual gelap-modern, kata
 
 ## Auto-install website
 
-Repository ini menyediakan `install.sh` untuk memasang website publik, backend API, service systemd, dan Nginx pada Ubuntu/Debian. Script ini berbeda dari installer VPS Agent pada repository `ssh-store-vps-agent-installer`.
+Repository ini menyediakan `install.sh` untuk memasang website publik, backend API, service systemd, dan Nginx pada Ubuntu/Debian. Script ini berbeda dari installer VPS Agent pada repository `ssh-store-ssh-tunneling`.
 
 ```bash
 git clone https://github.com/usnulnifah-web/ssh-store-website.git
@@ -94,7 +94,7 @@ Dashboard admin memiliki grafik garis CPU/RAM, kartu total VPS/online, resource 
 
 ## Repository installer VPS
 
-Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-website-ssh-tunneling). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
+Installer dipisahkan ke repository [ssh-store-ssh-tunneling](https://github.com/usnulnifah-web/ssh-store-ssh-tunneling). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
 
 ## Config Builder dan Panduan Setup
 
@@ -111,3 +111,42 @@ Installer VPS Agent berjalan tanpa pertanyaan interaktif: default-nya bind `127.
 ## Dokumentasi operasi
 
 Manual lengkap admin VPS dan user/member tersedia di [ADMIN-USER-MANUAL.md](./ADMIN-USER-MANUAL.md). Isinya mencakup perintah `systemctl`, health check, log, metrics, update, uninstall, troubleshooting, serta cara member membeli dan memakai konfigurasi.
+
+
+## DNS per produk
+
+Domain website dan domain tunnel diarahkan ke server yang berbeda sesuai tempat layanan berjalan. Gunakan record `A` untuk hostname yang menunjuk langsung ke IP publik VPS.
+
+| Produk | Contoh hostname | A record diarahkan ke | Port/path |
+|---|---|---|---|
+| Website publik/admin | `www.domain-anda.com` | IP server website | `80/443`, `/admin` |
+| SSH WebSocket | `ssh.domain-anda.com` | IP VPS SSH tunnel | `80`, `/ssh` |
+| SSH WebSocket TLS | `ssh.domain-anda.com` | IP VPS SSH tunnel | `443`, `/ssh` |
+| OpenVPN WebSocket | `vpn.domain-anda.com` | IP VPS OpenVPN | `443`, path OpenVPN |
+| V2Ray/VLESS | `vless.domain-anda.com` | IP VPS V2Ray | `443`, path VLESS |
+| Trojan | `trojan.domain-anda.com` | IP VPS Trojan | `443` |
+| WireGuard | `wg.domain-anda.com` | IP VPS WireGuard | UDP port konfigurasi |
+
+Contoh jika VPS SSH tunnel memakai IP `103.253.212.21`:
+
+```text
+Type: A
+Name: ssh
+Value: 103.253.212.21
+TTL: 300
+```
+
+Hasilnya harus dapat diperiksa dengan:
+
+```bash
+dig +short ssh.domain-anda.com
+```
+
+Untuk mengaktifkan SSH WebSocket TLS, arahkan DNS terlebih dahulu, buka port TCP `80` dan `443`, lalu jalankan installer pada VPS tunnel:
+
+```bash
+cd ~/ssh-store-ssh-tunneling
+sudo DOMAIN=ssh.domain-anda.com EMAIL=admin@domain-anda.com bash install-websocket-ssh.sh
+```
+
+Website hanya menampilkan domain produk kepada member setelah admin menyimpan host tersebut pada menu **Server & Protocol**. Admin harus memastikan domain setiap produk mengarah ke VPS yang benar. Domain SSH tidak boleh diarahkan ke VPS V2Ray jika layanan SSH WebSocket berada pada VPS lain.
