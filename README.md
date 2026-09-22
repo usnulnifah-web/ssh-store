@@ -83,3 +83,7 @@ Panel admin sekarang memiliki menu **Konfigurasi Protocol** dan **Panduan Setup*
 ### Installer tanpa prompt
 
 Installer VPS Agent berjalan tanpa pertanyaan interaktif: default-nya bind `127.0.0.1`, port `8787`, dan secret HMAC dibuat otomatis. Jika backend berbeda server, pelanggan dapat memakai parameter opsional `--backend-ip` dan `--bind-host`. Secret HMAC berbeda dari password SSH VPS dan dipakai khusus untuk autentikasi API Agent.
+
+## First-run setup admin
+
+`admin.html` memakai guard first-run. Jika flag admin belum dibuat, akses langsung ke dashboard admin dialihkan ke `admin-setup.html`. Pengguna wajib mengisi nama, email, password minimal 12 karakter, dan konfirmasi password sebelum dashboard dapat dibuka. Pada prototype flag/profile disimpan di localStorage; produksi wajib menggunakan tabel admin di database, password hash, session server-side, dan endpoint setup yang hanya dapat dipakai sekali.
