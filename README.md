@@ -6,7 +6,7 @@ Prototype landing page untuk toko akun SSH dengan gaya visual gelap-modern, kata
 Repository ini menyediakan `install.sh` untuk memasang website publik, backend API, service systemd, dan Nginx pada Ubuntu/Debian. Script ini berbeda dari installer VPS Agent pada repository `ssh-store-vps-agent-installer`.
 
 ```bash
-git clone https://github.com/usnulnifah-web/ssh-store.git
+git clone https://github.com/usnulnifah-web/ssh-store-website.git
 cd ssh-store
 sudo DOMAIN=www.domain-anda.com bash install.sh
 ```
@@ -94,7 +94,7 @@ Dashboard admin memiliki grafik garis CPU/RAM, kartu total VPS/online, resource 
 
 ## Repository installer VPS
 
-Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-vps-agent-installer). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
+Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-website-ssh-tunneling). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
 
 ## Config Builder dan Panduan Setup
 
