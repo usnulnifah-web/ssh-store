@@ -48,3 +48,7 @@ Kode ini adalah kerangka provisioning, bukan konfigurasi produksi siap pakai. Uj
 VPS Agent menyediakan `GET /metrics` yang dilindungi HMAC dan mengembalikan status, hostname, uptime, CPU load, memory usage, load average, serta waktu pemeriksaan. Backend API mem-proxy endpoint tersebut melalui `GET /v1/monitoring/metrics`.
 
 Dashboard admin memperbarui grafik demo setiap 60 detik dan mereset ringkasan pada pukul 00.00 waktu server. Setelah endpoint backend dan daftar server terhubung, data demo harus diganti dengan polling metrics nyata per server; status offline ditentukan ketika request agent timeout/gagal.
+
+## Bind address
+
+Agent default bind ke `127.0.0.1`. Jika API dan agent berbeda host, set `AGENT_BIND_HOST` pada environment agent dan batasi firewall ke IP backend. Jangan expose port agent tanpa allowlist/private network.
