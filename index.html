@@ -15,7 +15,7 @@
   <header class="site-header">
     <a class="brand" href="#home"><span class="brand-mark">S</span><span>SSH<span class="brand-accent">Store</span></span></a>
     <nav class="desktop-nav"><a href="#products">Produk</a><a href="#servers">Server</a><a href="#guide">Cara Kerja</a><a href="#faq">FAQ</a></nav>
-    <div class="header-actions"><span class="balance-pill" id="headerBalance">Saldo Rp0</span><button class="btn btn-outline" data-open="loginModal">Login Member</button><button class="menu-btn" aria-label="Buka menu">☰</button></div>
+    <div class="header-actions"><span class="balance-pill" id="headerBalance">Saldo Rp0</span><button class="btn btn-ghost member-accounts-btn" id="myAccounts">Akun Saya</button><button class="btn btn-outline" data-open="loginModal">Login Member</button><button class="menu-btn" aria-label="Buka menu">☰</button></div>
   </header>
 
   <main id="home">
@@ -40,6 +40,8 @@
   <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="eyebrow">MEMBER AREA</div><h2>Selamat datang kembali.</h2><p class="muted-copy">Masuk untuk melihat saldo, pembelian, dan akun aktif.</p><form id="loginForm"><label>Email<input type="email" required placeholder="kamu@email.com"></label><label>Password<input type="password" required placeholder="••••••••"></label><button class="btn btn-primary full" type="submit">Login Member</button></form><p class="modal-note">Belum punya akun? <a href="#" id="registerLink">Daftar sekarang</a></p></div></div>
   <div class="modal" id="topupModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="eyebrow">WALLET MEMBER</div><h2>Tambah saldo.</h2><p class="muted-copy">Prototype: pilih nominal untuk melihat alur top up.</p><div class="amount-grid"><button data-amount="10000">Rp10.000</button><button data-amount="25000">Rp25.000</button><button data-amount="50000">Rp50.000</button><button data-amount="100000">Rp100.000</button></div><button class="btn btn-primary full" id="manualTopup">Lanjut ke Pembayaran</button></div></div>
   <div class="modal" id="accountModal" aria-hidden="true"><div class="modal-card account-modal-card"><button class="modal-close" data-close>×</button><div class="success-badge">✓</div><div class="eyebrow">AKUN BERHASIL DIBUAT</div><h2>Detail akun SSH kamu.</h2><p class="muted-copy">Simpan data ini. Pada sistem produksi, detail hanya dapat dilihat oleh member yang login.</p><div class="account-details" id="accountDetails"></div><button class="btn btn-primary full" id="downloadAccount">Unduh Detail .TXT</button></div></div>
+  <div class="modal" id="accountsModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="eyebrow">MEMBER AREA</div><h2>Informasi akun saya.</h2><p class="muted-copy">Akun yang pernah dibuat akan tersimpan di sini. Pada versi produksi, daftar ini tersimpan di database member.</p><div class="saved-accounts" id="savedAccounts"></div></div></div>
+  <div class="account-toast" id="accountToast" aria-live="polite"><button class="toast-close" id="toastClose" aria-label="Tutup notifikasi">×</button><div class="toast-icon">✓</div><div><strong>Akun berhasil dibuat</strong><span id="toastText">Klik untuk melihat detail akun.</span></div></div>
   <script src="app.js"></script>
 </body>
 </html>

@@ -43,3 +43,7 @@ Jangan memasukkan API key payment gateway, password server, private key, atau kr
 ## Detail akun setelah berhasil dibuat
 
 Prototype sekarang menampilkan notifikasi sukses berisi username, password, host, port, lokasi, masa aktif, tanggal kedaluwarsa, dan status secara lengkap tanpa sensor. Tersedia tombol **Unduh Detail .TXT**. Pada implementasi produksi, data ini wajib hanya dikirim ke member yang sudah login dan berwenang; jangan pernah menaruhnya di halaman publik, URL, log server, atau repository.
+
+## Notifikasi akun dan informasi member
+
+Setelah pembelian/provisioning berhasil, UI menampilkan notifikasi mengambang di kanan bawah. Notifikasi dapat diklik untuk membuka detail lengkap dan memiliki tombol **X** untuk menutup. Detail akun disimpan ke daftar **Akun Saya** pada prototype dan dapat dibuka kembali atau diunduh sebagai TXT. Untuk produksi, daftar ini harus dipindahkan dari localStorage ke database yang terikat pada `user_id`, dengan otorisasi server-side sehingga member tidak dapat melihat akun milik member lain.
