@@ -57,3 +57,9 @@ Panel SEO menyediakan SEO title, meta description, keywords, canonical URL, Open
 ## Konfigurasi VPS di panel admin
 
 Panel **Server & Protocol** sekarang menyediakan konfigurasi VPS: nama server, IP VPS wajib, port SSH wajib, username SSH wajib, domain publik opsional, protocol yang tersedia, serta pilihan autentikasi **Password** atau **SSH Key**. Jika memilih password, field password tampil; jika memilih SSH key, field private key tampil. Pada prototype data tersimpan di localStorage hanya untuk simulasi. Implementasi produksi wajib memindahkan credential ke backend/secret manager terenkripsi dan tidak menyimpannya di browser atau repository publik.
+
+## Menu Member dan Admin
+
+`member.html` sekarang menyediakan struktur menu member lengkap melalui hamburger: Dashboard, Produk/Beli Layanan, Akun Saya, Pesanan Saya, Saldo & Top Up, Voucher/Promo, Referral, Notifikasi, Panduan Koneksi, Bantuan/Tiket, dan Profil & Keamanan.
+
+Menu admin juga dilengkapi placeholder terstruktur untuk Provisioning, Akun Digital, Voucher & Promo, Notifikasi, Support/Tiket, Laporan, dan Audit Log. Semua panel masih berupa kerangka UI sampai backend database, autentikasi, wallet, payment gateway, dan provisioning multi-protocol dihubungkan.
