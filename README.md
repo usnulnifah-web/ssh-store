@@ -39,3 +39,7 @@ python3 -m http.server 8080
 ## Catatan keamanan
 
 Jangan memasukkan API key payment gateway, password server, private key, atau kredensial admin ke repository. Gunakan environment variables dan secret manager.
+
+## Detail akun setelah berhasil dibuat
+
+Prototype sekarang menampilkan notifikasi sukses berisi username, password, host, port, lokasi, masa aktif, tanggal kedaluwarsa, dan status secara lengkap tanpa sensor. Tersedia tombol **Unduh Detail .TXT**. Pada implementasi produksi, data ini wajib hanya dikirim ke member yang sudah login dan berwenang; jangan pernah menaruhnya di halaman publik, URL, log server, atau repository.
