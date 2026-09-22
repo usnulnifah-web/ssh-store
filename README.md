@@ -53,3 +53,7 @@ Setelah pembelian/provisioning berhasil, UI menampilkan notifikasi mengambang di
 `admin.html` menyediakan prototype dashboard admin dengan tampilan minimal. Dashboard utama sengaja kosong, sedangkan seluruh menu dipindahkan ke drawer hamburger: SEO Website, Produk & Harga, Server & Protocol, Member, Saldo & Top Up, Pesanan, Tombol Publik, dan Pengaturan Sistem.
 
 Panel SEO menyediakan SEO title, meta description, keywords, canonical URL, Open Graph image, robots, serta preview hasil pencarian. Prototype menyimpan pengaturan di localStorage; versi produksi harus menyimpannya di backend/database lalu layout publik membaca nilai tersebut secara server-side.
+
+## Konfigurasi VPS di panel admin
+
+Panel **Server & Protocol** sekarang menyediakan konfigurasi VPS: nama server, IP VPS wajib, port SSH wajib, username SSH wajib, domain publik opsional, protocol yang tersedia, serta pilihan autentikasi **Password** atau **SSH Key**. Jika memilih password, field password tampil; jika memilih SSH key, field private key tampil. Pada prototype data tersimpan di localStorage hanya untuk simulasi. Implementasi produksi wajib memindahkan credential ke backend/secret manager terenkripsi dan tidak menyimpannya di browser atau repository publik.
