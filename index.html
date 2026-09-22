@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SSH Store — Akun SSH Cepat & Stabil</title>
+  <meta name="description" content="Prototype toko akun SSH dengan login member, saldo, dan top up." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">S</span><span>SSH<span class="brand-accent">Store</span></span></a>
+    <nav class="desktop-nav"><a href="#products">Produk</a><a href="#servers">Server</a><a href="#guide">Cara Kerja</a><a href="#faq">FAQ</a></nav>
+    <div class="header-actions"><span class="balance-pill" id="headerBalance">Saldo Rp0</span><button class="btn btn-outline" data-open="loginModal">Login Member</button><button class="menu-btn" aria-label="Buka menu">☰</button></div>
+  </header>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> AKUN SSH PREMIUM • AKTIVASI CEPAT</div><h1>Koneksi lebih bebas.<br><em>Belanja lebih mudah.</em></h1><p class="hero-lead">Temukan akun SSH yang stabil, cepat, dan siap pakai. Pilih server, bayar dengan saldo, lalu terima detail akun secara instan.</p><div class="hero-actions"><a class="btn btn-primary" href="#products">Lihat Produk <span>↗</span></a><button class="btn btn-ghost" data-open="topupModal">Tambah Saldo</button></div><div class="hero-trust"><div><strong>99.9%</strong><span>Uptime target</span></div><div><strong>24/7</strong><span>Aktivasi otomatis</span></div><div><strong>12+</strong><span>Lokasi server</span></div></div></div>
+      <div class="hero-visual"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="terminal-card"><div class="terminal-top"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">ssh-store / status</span></div><div class="terminal-body"><p><span class="muted">$</span> connect --server <span class="cyan">sg-premium</span></p><p class="success">✓ Authentication successful</p><p><span class="muted">host</span> sg-01.sshstore.net</p><p><span class="muted">status</span> <span class="success">ONLINE</span></p><div class="terminal-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><p class="terminal-footer">latency <span class="cyan">24ms</span><span class="dot-sep">•</span> uptime <span class="success">99.98%</span></p></div></div></div>
+    </section>
+
+    <section class="stats section-wrap"><div><strong>2,480+</strong><span>Akun terjual</span></div><div><strong>12</strong><span>Lokasi server</span></div><div><strong>1,250+</strong><span>Member aktif</span></div><div><strong>4.9/5</strong><span>Rating layanan</span></div></section>
+
+    <section id="products" class="section-wrap content-section"><div class="section-heading"><div><div class="eyebrow">PILIHAN TERBAIK</div><h2>Paket yang pas untuk kebutuhanmu.</h2></div><a class="text-link" href="#products">Lihat semua produk ↗</a></div><div class="product-grid" id="productGrid"></div></section>
+
+    <section id="servers" class="section-wrap content-section split-section"><div><div class="eyebrow">JARINGAN KAMI</div><h2>Server dekat,<br><em>koneksi cepat.</em></h2><p class="muted-copy">Pilih lokasi server dengan latensi terbaik untuk kebutuhan browsing, gaming, atau remote work.</p><a class="btn btn-ghost" href="#servers">Cek semua server</a></div><div class="server-list"><div class="server-row"><span class="flag">🇸🇬</span><div><strong>Singapore Premium</strong><span>SG • 24ms rata-rata</span></div><b class="online">● Online</b></div><div class="server-row"><span class="flag">🇮🇩</span><div><strong>Indonesia Jakarta</strong><span>ID • 18ms rata-rata</span></div><b class="online">● Online</b></div><div class="server-row"><span class="flag">🇯🇵</span><div><strong>Japan Tokyo</strong><span>JP • 68ms rata-rata</span></div><b class="online">● Online</b></div><div class="server-row"><span class="flag">🇺🇸</span><div><strong>United States</strong><span>US • 190ms rata-rata</span></div><b class="online">● Online</b></div></div></section>
+
+    <section id="guide" class="section-wrap content-section"><div class="section-heading"><div><div class="eyebrow">SANGAT MUDAH</div><h2>Mulai dalam 3 langkah.</h2></div></div><div class="steps"><div class="step"><span>01</span><h3>Daftar member</h3><p>Buat akun gratis dan masuk ke dashboard member.</p></div><div class="step"><span>02</span><h3>Isi saldo</h3><p>Gunakan gateway pembayaran atau transfer manual.</p></div><div class="step"><span>03</span><h3>Pilih & aktifkan</h3><p>Pilih paket, bayar dengan saldo, dan akun siap digunakan.</p></div></div></section>
+
+    <section id="faq" class="section-wrap content-section faq-section"><div><div class="eyebrow">BANTUAN</div><h2>Pertanyaan yang sering ditanyakan.</h2></div><div class="faq-list"><details><summary>Bagaimana cara menerima akun setelah membeli?</summary><p>Detail akun tampil otomatis di dashboard member setelah pembayaran berhasil.</p></details><details><summary>Apakah saldo bisa diisi manual?</summary><p>Bisa. Anda dapat memilih payment gateway atau mengirim bukti transfer untuk diverifikasi admin.</p></details><details><summary>Apakah bisa memilih lokasi server?</summary><p>Bisa, selama server tersebut masih tersedia dan mendukung paket yang dipilih.</p></details></div></section>
+  </main>
+
+  <footer class="site-footer section-wrap"><div class="brand"><span class="brand-mark">S</span><span>SSH<span class="brand-accent">Store</span></span></div><p>Platform akun SSH cepat dan mudah untuk kebutuhan digitalmu.</p><div><a href="#faq">Terms</a><a href="#faq">Privacy</a><a href="#faq">Kontak</a></div></footer>
+
+  <div class="modal" id="loginModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="eyebrow">MEMBER AREA</div><h2>Selamat datang kembali.</h2><p class="muted-copy">Masuk untuk melihat saldo, pembelian, dan akun aktif.</p><form id="loginForm"><label>Email<input type="email" required placeholder="kamu@email.com"></label><label>Password<input type="password" required placeholder="••••••••"></label><button class="btn btn-primary full" type="submit">Login Member</button></form><p class="modal-note">Belum punya akun? <a href="#" id="registerLink">Daftar sekarang</a></p></div></div>
+  <div class="modal" id="topupModal" aria-hidden="true"><div class="modal-card"><button class="modal-close" data-close>×</button><div class="eyebrow">WALLET MEMBER</div><h2>Tambah saldo.</h2><p class="muted-copy">Prototype: pilih nominal untuk melihat alur top up.</p><div class="amount-grid"><button data-amount="10000">Rp10.000</button><button data-amount="25000">Rp25.000</button><button data-amount="50000">Rp50.000</button><button data-amount="100000">Rp100.000</button></div><button class="btn btn-primary full" id="manualTopup">Lanjut ke Pembayaran</button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
