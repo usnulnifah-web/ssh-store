@@ -67,3 +67,7 @@ Menu admin juga dilengkapi placeholder terstruktur untuk Provisioning, Akun Digi
 ## Audit interaksi tombol
 
 Semua tombol navigasi yang ada pada prototype sekarang memiliki aksi: menu hamburger membuka drawer, menu berpindah panel, menu publik mobile terbuka, form SEO/VPS menyimpan data simulasi, produk mengarahkan ke katalog, top up/voucher/support/profile memberi status yang jelas, dan referral memiliki aksi salin. Fitur yang membutuhkan backend—login, payment gateway, tiket, profil, dan provisioning nyata—tidak dibuat seolah-olah aktif; tombolnya memberi keterangan bahwa integrasi backend belum dikonfigurasi.
+
+## Monitoring VPS
+
+Dashboard admin memiliki grafik garis CPU/RAM, kartu total VPS/online, resource tertinggi, kartu kesehatan per server, dan alert untuk kondisi **OVERLOAD** atau **OFFLINE**. Prototype menampilkan demo data agar UI dapat diuji. Pada integrasi produksi, dashboard mengambil metrics dari Backend API/VPS Agent setiap 60 detik; ringkasan harian di-reset pukul 00.00, tetapi deteksi overload/offline tetap berjalan sepanjang hari.

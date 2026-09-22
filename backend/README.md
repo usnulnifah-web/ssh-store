@@ -42,3 +42,9 @@ Agent menjalankan `/usr/sbin/useradd`, `/usr/sbin/chpasswd`, `/usr/sbin/usermod`
 10. Jangan mengembalikan password akun SSH ke log. Simpan detail sensitif hanya jika memang diperlukan dan lindungi database.
 
 Kode ini adalah kerangka provisioning, bukan konfigurasi produksi siap pakai. Uji di VPS staging dengan akun uji sebelum menghubungkan pembayaran dan saldo nyata.
+
+## Monitoring
+
+VPS Agent menyediakan `GET /metrics` yang dilindungi HMAC dan mengembalikan status, hostname, uptime, CPU load, memory usage, load average, serta waktu pemeriksaan. Backend API mem-proxy endpoint tersebut melalui `GET /v1/monitoring/metrics`.
+
+Dashboard admin memperbarui grafik demo setiap 60 detik dan mereset ringkasan pada pukul 00.00 waktu server. Setelah endpoint backend dan daftar server terhubung, data demo harus diganti dengan polling metrics nyata per server; status offline ditentukan ketika request agent timeout/gagal.
