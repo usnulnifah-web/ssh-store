@@ -87,3 +87,7 @@ Installer VPS Agent berjalan tanpa pertanyaan interaktif: default-nya bind `127.
 ## First-run setup admin
 
 `admin.html` memakai guard first-run. Jika flag admin belum dibuat, akses langsung ke dashboard admin dialihkan ke `admin-setup.html`. Pengguna wajib mengisi nama, email, password minimal 12 karakter, dan konfirmasi password sebelum dashboard dapat dibuka. Pada prototype flag/profile disimpan di localStorage; produksi wajib menggunakan tabel admin di database, password hash, session server-side, dan endpoint setup yang hanya dapat dipakai sekali.
+
+## Dokumentasi operasi
+
+Manual lengkap admin VPS dan user/member tersedia di [ADMIN-USER-MANUAL.md](./ADMIN-USER-MANUAL.md). Isinya mencakup perintah `systemctl`, health check, log, metrics, update, uninstall, troubleshooting, serta cara member membeli dan memakai konfigurasi.
