@@ -75,3 +75,7 @@ Dashboard admin memiliki grafik garis CPU/RAM, kartu total VPS/online, resource 
 ## Repository installer VPS
 
 Installer dipisahkan ke repository [ssh-store-vps-agent-installer](https://github.com/usnulnifah-web/ssh-store-vps-agent-installer). Gunakan repository website ini untuk aplikasi publik/admin/backend, dan repository installer tersebut hanya pada VPS yang akan menjalankan agent provisioning.
+
+## Config Builder dan Panduan Setup
+
+Panel admin sekarang memiliki menu **Konfigurasi Protocol** dan **Panduan Setup**. Config Builder mencakup SSH WebSocket/SSL dan OpenVPN WebSocket dengan SSL port default `443`, WebSocket path, host/domain, format TXT/OVPN/link/QR, preview, salin, dan unduh TXT. Port 443 dapat diganti manual jika server/provider memakai port lain. Panduan setup menjelaskan VPS, installer agent, Server & Protocol, konfigurasi protocol, pengujian, dan troubleshooting.
