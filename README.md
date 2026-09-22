@@ -98,7 +98,6 @@ Installer dipisahkan ke repository [ssh-store-ssh-tunneling](https://github.com/
 
 ## Config Builder dan Panduan Setup
 
-Panel admin sekarang memiliki menu **Konfigurasi Protocol** dan **Panduan Setup**. Config Builder mencakup SSH WebSocket/SSL dan OpenVPN WebSocket dengan SSL port default `443`, WebSocket path, host/domain, format TXT/OVPN/link/QR, preview, salin, dan unduh TXT. Port 443 dapat diganti manual jika server/provider memakai port lain. Panduan setup menjelaskan VPS, installer agent, Server & Protocol, konfigurasi protocol, pengujian, dan troubleshooting.
 
 ### Installer tanpa prompt
 
@@ -122,10 +121,6 @@ Domain website dan domain tunnel diarahkan ke server yang berbeda sesuai tempat 
 | Website publik/admin | `www.domain-anda.com` | IP server website | `80/443`, `/admin` |
 | SSH WebSocket | `ssh.domain-anda.com` | IP VPS SSH tunnel | `80`, `/ssh` |
 | SSH WebSocket TLS | `ssh.domain-anda.com` | IP VPS SSH tunnel | `443`, `/ssh` |
-| OpenVPN WebSocket | `vpn.domain-anda.com` | IP VPS OpenVPN | `443`, path OpenVPN |
-| V2Ray/VLESS | `vless.domain-anda.com` | IP VPS V2Ray | `443`, path VLESS |
-| Trojan | `trojan.domain-anda.com` | IP VPS Trojan | `443` |
-| WireGuard | `wg.domain-anda.com` | IP VPS WireGuard | UDP port konfigurasi |
 
 Contoh jika VPS SSH tunnel memakai IP `103.253.212.21`:
 
@@ -149,4 +144,3 @@ cd ~/ssh-store-ssh-tunneling
 sudo DOMAIN=ssh.domain-anda.com EMAIL=admin@domain-anda.com bash install-websocket-ssh.sh
 ```
 
-Website hanya menampilkan domain produk kepada member setelah admin menyimpan host tersebut pada menu **Server & Protocol**. Admin harus memastikan domain setiap produk mengarah ke VPS yang benar. Domain SSH tidak boleh diarahkan ke VPS V2Ray jika layanan SSH WebSocket berada pada VPS lain.

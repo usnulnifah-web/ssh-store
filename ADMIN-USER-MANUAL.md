@@ -247,9 +247,6 @@ Informasi yang dapat ditampilkan:
 Member dapat menggunakan:
 
 - TXT untuk data akun umum.
-- `.ovpn` untuk OpenVPN.
-- `.conf` untuk WireGuard.
-- Link VMess/VLESS/Trojan/Shadowsocks.
 - QR Code jika tersedia.
 
 Simpan file dan password dengan aman. Jangan mengunggah konfigurasi ke grup publik.
@@ -297,10 +294,6 @@ Contoh pembagian domain:
 | Website publik dan panel admin | `www.domain-anda.com` | `A` | IP server website | `80/443`, `/admin` |
 | SSH WebSocket | `ssh.domain-anda.com` | `A` | IP VPS SSH tunnel | `80`, `/ssh` |
 | SSH WebSocket TLS | `ssh.domain-anda.com` | `A` | IP VPS SSH tunnel | `443`, `/ssh` |
-| OpenVPN WebSocket | `vpn.domain-anda.com` | `A` | IP VPS OpenVPN | `443`, path sesuai konfigurasi |
-| V2Ray/VLESS | `vless.domain-anda.com` | `A` | IP VPS V2Ray | `443`, path sesuai konfigurasi |
-| Trojan | `trojan.domain-anda.com` | `A` | IP VPS Trojan | `443` |
-| WireGuard | `wg.domain-anda.com` | `A` | IP VPS WireGuard | UDP port sesuai konfigurasi |
 
 Jika layanan menggunakan IP publik `103.253.212.21`, contoh record DNS adalah:
 
@@ -341,7 +334,6 @@ Username: akun SSH
 Password: password akun SSH
 ```
 
-Jangan mengarahkan semua hostname produk ke VPS yang salah. `ssh.domain-anda.com` harus menuju VPS yang menjalankan SSH WebSocket, sedangkan `vless.domain-anda.com` harus menuju VPS yang menjalankan V2Ray. Jika beberapa produk sengaja berada pada satu VPS, setiap layanan harus menggunakan konfigurasi Nginx dan port/path yang tidak bertabrakan.
 
 ## D. Checklist SSL/WSS
 
